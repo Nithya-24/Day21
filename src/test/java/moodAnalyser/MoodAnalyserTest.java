@@ -13,8 +13,8 @@ public class MoodAnalyserTest {
 	@Test
 	
     public void givenMessage_IsProper_ShouldReturnSad() {
-//		moodAnalyser.setMessage("I am in sad Mood");
-        String result = moodAnalyser.analyseMood("I am in sad Mood");
+		moodAnalyser.setMessage("I am in sad Mood");
+        String result = moodAnalyser.analyseMood();
         Assert.assertEquals("SAD", result);
     }
 	
@@ -23,11 +23,21 @@ public class MoodAnalyserTest {
 	 */
 	@Test
     public void givenMessage_IsProper_ShouldReturnHappy() {
-//		moodAnalyser.setMessage("I am in happy Mood");
-        String result = moodAnalyser.analyseMood("I am in happy Mood");
+		moodAnalyser.setMessage("I am in happy Mood");
+        String result = moodAnalyser.analyseMood();
         Assert.assertEquals("HAPPY", result);
     }
-
+	
+	/**
+	 * created the test case to check for NullException.
+	 * If null value passed then it will return Invalid Mood  
+	 */
+	@Test
+    public void NullExceptionHandler() {
+        moodAnalyser.setMessage(null);
+        String result = moodAnalyser.analyseMood();
+        Assert.assertEquals("Invalid", result);
+    }
 	
 
 }
