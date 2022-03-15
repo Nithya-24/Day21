@@ -21,7 +21,7 @@ public class MoodAnalyser {
 	 * @return
 	 */
 	
-	public String analyseMood() {
+	public String analyseMood() throws MoodAnalyserException{
 		try {
 		if (message.toLowerCase().contains("happy")) {
 			return "HAPPY";
@@ -29,7 +29,7 @@ public class MoodAnalyser {
             return "SAD";
        } 
 		}catch( NullPointerException e) {
-			 return "HAPPY";
+			 throw new MoodAnalyserException("Exception found");
 		}
 		return message;
 	}
