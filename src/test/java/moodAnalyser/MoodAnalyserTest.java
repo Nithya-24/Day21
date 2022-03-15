@@ -1,7 +1,5 @@
 package moodAnalyser;
 
-import static org.junit.Assert.*;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,18 +13,21 @@ public class MoodAnalyserTest {
 	@Test
 	
     public void givenMessage_IsProper_ShouldReturnSad() {
-        String result = moodAnalyser.analyseMood("I am Sad Mood");
+		moodAnalyser.setMessage("I am in sad Mood");
+        String result = moodAnalyser.analyseMood();
         Assert.assertEquals("SAD", result);
     }
 	
 	/**
-	 * This method will return Happy if we pass as in any mood.
+	 * This method will return Happy if we pass Happy mood.
 	 */
 	@Test
-    public void givenMessage_IsProper_AndContain_Any_ShouldReturnHappy() {
-        String result = moodAnalyser.analyseMood("I am in Any Mood");
+    public void givenMessage_IsProper_ShouldReturnHappy() {
+		moodAnalyser.setMessage("I am in Happy Mood");
+        String result = moodAnalyser.analyseMood();
         Assert.assertEquals("HAPPY", result);
     }
 
+	
 
 }
