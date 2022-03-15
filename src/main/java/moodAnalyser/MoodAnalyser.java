@@ -3,7 +3,7 @@ package moodAnalyser;
 public class MoodAnalyser {
 	String message;
 	
-	public void MoodAnalyzer(String message) {
+	public void MoodAnalyzer(String message) throws MoodAnalyserException{
         this.message = message;
     }
 	
@@ -29,7 +29,7 @@ public class MoodAnalyser {
             return "SAD";
        } 
 		}catch( NullPointerException e) {
-            return "Invalid";
+			 return "HAPPY";
 		}
 		return message;
 	}
