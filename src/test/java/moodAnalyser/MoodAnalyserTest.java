@@ -12,7 +12,7 @@ public class MoodAnalyserTest {
 	 */
 	@Test
 	
-    public void givenMessage_IsProper_ShouldReturnSad() {
+    public void givenMessage_IsProper_ShouldReturnSad() throws MoodAnalyserException {
 		moodAnalyser.setMessage("I am in sad Mood");
         String result = moodAnalyser.analyseMood();
         Assert.assertEquals("SAD", result);
@@ -22,7 +22,7 @@ public class MoodAnalyserTest {
 	 * This method will return Happy if we pass Happy mood.
 	 */
 	@Test
-    public void givenMessage_IsProper_ShouldReturnHappy() {
+    public void givenMessage_IsProper_ShouldReturnHappy() throws MoodAnalyserException {
 		moodAnalyser.setMessage("I am in happy Mood");
         String result = moodAnalyser.analyseMood();
         Assert.assertEquals("HAPPY", result);
@@ -33,11 +33,15 @@ public class MoodAnalyserTest {
 	 * If null value passed then it will return Invalid Mood  
 	 */
 	@Test
-    public void NullExceptionHandler() {
+	 public void NullReturnHappy() throws MoodAnalyserException{
+		try  {
         moodAnalyser.setMessage(null);
         String result = moodAnalyser.analyseMood();
-        Assert.assertEquals("Invalid", result);
+        Assert.assertEquals("Invalid Mood", result);
+    }catch (MoodAnalyserException e) {
+    System.out.println("Invalid Mood");
     }
-	
 
 }
+}
+	
