@@ -21,7 +21,7 @@ public class MoodAnalyser {
 	 * @return
 	 */
 	
-	public String analyseMood() {
+	public String analyseMood(String message) {
 		if (message.toLowerCase().contains("happy")) {
 			return "HAPPY";
 		} else if (message.toLowerCase().contains("sad")) {
