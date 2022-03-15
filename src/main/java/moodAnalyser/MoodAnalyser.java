@@ -17,7 +17,7 @@ public class MoodAnalyser {
 	    }
 	  
 	/**
-	 * convert the Message to Lowercase and check its Mood
+	 * convert the Message to check its Mood
 	 * @return
 	 */
 	
@@ -26,9 +26,7 @@ public class MoodAnalyser {
 			return "HAPPY";
 		} else if (message.toLowerCase().contains("sad")) {
             return "SAD";
-        } else if (message.toLowerCase().contains("any")) {
-            return "ANY";
-        } else {
+       } else {
             return null;
 		}
 	}
